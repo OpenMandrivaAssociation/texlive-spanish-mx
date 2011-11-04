@@ -49,6 +49,7 @@ recent (version >=4.2b) releases of the Spanish option.).
 %{_texmfdistdir}/tex/latex/spanish-mx/spanishmx.ldf
 %{_texmfdistdir}/tex/latex/spanish-mx/spanishmx.sty
 %doc %{_texmfdistdir}/doc/latex/spanish-mx/README
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -59,3 +60,5 @@ recent (version >=4.2b) releases of the Spanish option.).
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
