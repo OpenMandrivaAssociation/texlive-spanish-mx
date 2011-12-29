@@ -17,7 +17,6 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Conflicts:	texlive-texmf <= 20110705-3
 
 %description
 The bundle provides files to support typesetting of texts in
@@ -28,20 +27,12 @@ request babel's spanish option) to use the Mexican language
 facilities. (Note that this facility is only available with the
 recent (version >=4.2b) releases of the Spanish option.).
 
-%pre
-    %_texmf_mktexlsr_pre
-
 %post
-    %_texmf_mktexlsr_post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
-    fi
+    %{_sbindir}/texlive.post
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
@@ -50,7 +41,6 @@ recent (version >=4.2b) releases of the Spanish option.).
 %{_texmfdistdir}/tex/latex/spanish-mx/spanishmx.ldf
 %{_texmfdistdir}/tex/latex/spanish-mx/spanishmx.sty
 %doc %{_texmfdistdir}/doc/latex/spanish-mx/README
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -61,5 +51,3 @@ recent (version >=4.2b) releases of the Spanish option.).
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
