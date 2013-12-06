@@ -6,7 +6,7 @@
 # catalog-version 1.1a
 Name:		texlive-spanish-mx
 Version:	1.1a
-Release:	5
+Release:	6
 Summary:	Typeset Spanish as in Mexico
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/language/spanish/babel/contrib/mexican
