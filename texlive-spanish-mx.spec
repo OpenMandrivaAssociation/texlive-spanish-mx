@@ -9,7 +9,7 @@ Version:	1.1a
 Release:	12
 Summary:	Typeset Spanish as in Mexico
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/language/spanish/babel/contrib/mexican
+URL:		https://www.ctan.org/tex-archive/language/spanish/babel/contrib/mexican
 License:	LPPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/spanish-mx.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/spanish-mx.doc.tar.xz
